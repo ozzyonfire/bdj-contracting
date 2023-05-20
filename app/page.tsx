@@ -9,6 +9,8 @@ import { HammerIcon, HardHatIcon, RulerIcon, Shovel, ShovelIcon } from 'lucide-r
 import { InstagramFeed } from '@/components/instagram-feed';
 import Link from 'next/link';
 import { Separator } from '@/components/ui/separator';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
 
 export default async function Home() {
   const theme = (cookies().get("theme")?.value as 'dark' | 'light') || 'light';
@@ -146,6 +148,23 @@ export default async function Home() {
             </li>
           ))}
         </ul>
+      </Section>
+      <Section>
+        <SectionHeader title="Contact Us" />
+        <div className='flex flex-col items-center justify-center gap-4'>
+          <p className='font-serif text-2xl text-muted-foreground font-semibold text-center'>
+            Ready to get started?
+          </p>
+          <form className='min-w-[320px]'>
+            <div className='flex flex-col gap-4'>
+              <Input placeholder="First Name" />
+              <Input placeholder="Last Name" />
+              <Input placeholder="Email" type="email" />
+              <Input placeholder="Phone" />
+              <Textarea placeholder="Message" />
+            </div>
+          </form>
+        </div>
       </Section>
     </main>
   )
