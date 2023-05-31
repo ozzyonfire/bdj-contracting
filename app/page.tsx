@@ -5,12 +5,13 @@ import { cookies } from 'next/headers';
 import Testimonials from '@/components/client/testimonials';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { ReactNode } from 'react';
-import { HammerIcon, HardHatIcon, RulerIcon, Shovel, ShovelIcon } from 'lucide-react';
+import { HammerIcon, HardHatIcon, RulerIcon, Shovel, ShovelIcon, MenuIcon } from 'lucide-react';
 import { InstagramFeed } from '@/components/instagram-feed';
-import Link from 'next/link';
 import { Separator } from '@/components/ui/separator';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import MobileNav from '@/components/client/mobile-nav';
 
 export default async function Home() {
   const theme = (cookies().get("theme")?.value as 'dark' | 'light') || 'light';
@@ -59,7 +60,10 @@ export default async function Home() {
             />
           </div>
           <div className='flex-grow'></div>
-          <div className='flex justify-center items-center gap-4 h-12'>
+          <div className="block lg:hidden">
+            <MobileNav />
+          </div>
+          <div className='hidden lg:flex justify-center items-center gap-4 h-12'>
             <a href="#do-best">
               <span className='font-serif text-lg font-semibold hover:border-b-4'>
                 What we do
@@ -78,7 +82,9 @@ export default async function Home() {
               </span>
             </a>
             <Separator orientation='vertical' />
-            <Button className='font-serif' variant="default" size="nav">Contact Us</Button>
+            <a href="#contact-us">
+              <Button className='font-serif' variant="default" size="nav">Contact Us</Button>
+            </a>
             <ToggleTheme theme={theme} />
           </div>
         </div>
@@ -149,19 +155,22 @@ export default async function Home() {
           ))}
         </ul>
       </Section>
-      <Section>
+      <Section id="contact-us">
         <SectionHeader title="Contact Us" />
         <div className='flex flex-col items-center justify-center gap-4'>
           <p className='font-serif text-2xl text-muted-foreground font-semibold text-center'>
             Ready to get started?
           </p>
-          <form className='min-w-[320px]'>
+          <form className='min-w-[480px] px-4' method='POST' action='/api/contact'>
             <div className='flex flex-col gap-4'>
-              <Input placeholder="First Name" />
-              <Input placeholder="Last Name" />
-              <Input placeholder="Email" type="email" />
-              <Input placeholder="Phone" />
-              <Textarea placeholder="Message" />
+              <Input placeholder='First name' type="text" name="first-name" required />
+              <Input placeholder='Last name' type="text" name="last-name" required />
+              <Input placeholder="Email" type="email" required name="email" />
+              <Input placeholder="Phone" name="phone" />
+              <Textarea placeholder="Message" required name="message" />
+              <div className="flex justify-end">
+                <Button variant="default" size="lg" type="submit">Send</Button>
+              </div>
             </div>
           </form>
         </div>
