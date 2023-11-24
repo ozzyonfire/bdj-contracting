@@ -12,7 +12,7 @@ export default function MobileNav() {
           <MenuIcon size={24} />
         </Button>
       </SheetTrigger>
-      <SheetContent size="lg" onCloseAutoFocus={(e) => {
+      <SheetContent onCloseAutoFocus={(e) => {
         e.preventDefault();
       }}>
         <div className="flex flex-col gap-4">
