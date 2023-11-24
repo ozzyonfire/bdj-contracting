@@ -10,11 +10,11 @@ export default function DoBest({ theme }: { theme: 'dark' | 'light' }) {
 				fill='fill-gray-50 dark:fill-gray-950'
 				points="0,100 100,100, 100,0"
 			/>
-			<div className="container my-24 flex flex-col gap-4 h-full flex-grow">
-				<h2 className="text-6xl font-serif font-bold">
+			<div className="container my-12 lg:my-24 flex flex-col gap-4 h-full flex-grow">
+				<h2 className="lg:text-6xl font-serif font-bold text-4xl">
 					We are dedicated to transforming your living spaces into the home of your dreams.
 				</h2>
-				<div className="grid grid-cols-2 mt-8 gap-4 flex-grow">
+				<div className="grid grid-cols-1 lg:grid-cols-2 mt-4 lg:mt-8 gap-8 lg:gap-4 flex-grow">
 					<div className="flex flex-col gap-8">
 						<p className="text-xl font-sans font-light">
 							With a focus on excellence and attention to detail, we specialize in providing top-notch renovation services for basements, bathrooms, kitchens, and more. Our team of skilled contractors is committed to delivering high-quality craftsmanship, ensuring that every project is a true reflection of your style and needs.
@@ -23,8 +23,8 @@ export default function DoBest({ theme }: { theme: 'dark' | 'light' }) {
 							<Button className='font-serif min-w-48' variant="default" size="lg">Get a Quote</Button>
 						</div>
 					</div>
-					<div className="flex gap-4">
-						<div className="relative w-full">
+					<div className="flex gap-4 flex-col lg:flex-row w-full min-h-[512px]">
+						<div className="relative w-full h-full">
 							<Image
 								className="rounded-md"
 								src="/images/hero.jpg"
@@ -34,7 +34,7 @@ export default function DoBest({ theme }: { theme: 'dark' | 'light' }) {
 								objectPosition="center"
 							/>
 						</div>
-						<div className="relative w-full">
+						<div className="relative w-full h-full">
 							<Image
 								className="rounded-md"
 								src="/images/hero2.jpg"

@@ -38,7 +38,8 @@ export default async function Home() {
             objectPosition="center"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-secondary via-transparent via-50% to-primary-foreground opacity-75"></div>
+          <div className="hidden lg:block absolute inset-0 bg-gradient-to-b from-secondary via-transparent via-50% to-primary-foreground opacity-75"></div>
+          <div className='lg:hidden absolute inset-0 bg-gray-950 opacity-50'></div>
 
           <div className='container relative z-10 flex gap-4 pb-16 items-end'>
             <div className="flex flex-col gap-4">
@@ -48,9 +49,12 @@ export default async function Home() {
               <p className='font-sans text-2xl max-w-screen-md font-light'>
                 Get a free quote today. We&apos;ll get back to you within 24 hours. We are committed to providing the highest quality workmanship and customer service. We are fully licensed and insured.
               </p>
+              <div className='lg:hidden'>
+                <Button className='font-serif min-w-48' variant="default" size="lg">Get a Quote</Button>
+              </div>
             </div>
-            <div className='flex-grow'></div>
-            <div>
+            <div className='hidden lg:block lg:flex-grow'></div>
+            <div className='hidden lg:block'>
               <Button className='font-serif min-w-48' variant="default" size="lg">Get a Quote</Button>
             </div>
           </div>

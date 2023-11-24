@@ -13,8 +13,8 @@ export default function ChooseUs() {
 				points="0,0 0,100, 100,100"
 			/>
 			<div className="container my-24 flex flex-col gap-4 h-full flex-grow">
-				<div className="flex flex-wrap w-full">
-					<div className="w-1/3">
+				<div className="flex flex-wrap w-full gap-8 lg:gap-0">
+					<div className="w-full lg:w-1/3">
 						<div className="flex flex-col gap-12">
 							<h2 className="text-5xl font-serif font-bold">
 								Why choose us?
@@ -24,8 +24,8 @@ export default function ChooseUs() {
 							</div>
 						</div>
 					</div>
-					<div className="w-2/3">
-						<div className="grid grid-cols-2 gap-8">
+					<div className="w-full lg:w-2/3">
+						<div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative">
 							<ChooseUsCard
 								title="Expertise"
 								description="With years of experience in the industry, our team brings a wealth of expertise to every project. We understand the intricacies of basement, bathroom, and kitchen renovations, and we use this knowledge to deliver outstanding results."

@@ -29,7 +29,7 @@ export default function ContactUs() {
 					</p>
 				</div>
 				<div className="flex-grow flex flex-col justify-center">
-					<form className='min-w-[480px] max-w-screen-md mx-auto' action={handleFormSubmit} ref={formRef}>
+					<form className='w-full max-w-screen-md mx-auto' action={handleFormSubmit} ref={formRef}>
 						<div className='flex flex-col gap-2'>
 							{isSuccess && (
 								<div className="bg-green-500 bg-opacity-50 dark:text-white text-center p-4 rounded-md">

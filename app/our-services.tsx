@@ -19,7 +19,7 @@ export default function OurServices() {
 					</p>
 				</div>
 				<div className="flex-grow flex flex-col justify-center">
-					<div className="grid grid-cols-3 gap-8 mt-8 relative">
+					<div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-8 relative">
 						<ServiceCard
 							title="Basement"
 							description="We specialize in basement renovations, from start to finish. We can help you with everything from design and planning to construction and finishing touches."
