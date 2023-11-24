@@ -66,7 +66,7 @@ export default async function Home() {
             objectPosition="center"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-secondary via-transparent via-30% to-primary-foreground opacity-75"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-secondary via-transparent via-50% to-primary-foreground opacity-75"></div>
 
           <div className='container relative z-10 flex gap-4 pb-16 items-end'>
             <div className="flex flex-col gap-4">
