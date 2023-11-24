@@ -1,5 +1,5 @@
 import '@/styles/globals.css'
-import { libre } from '@/lib/fonts';
+import { libre, kanit } from '@/lib/fonts';
 import { cookies } from 'next/headers';
 
 export const metadata = {
@@ -15,7 +15,7 @@ export default function RootLayout({
   const theme = (cookies().get("theme")?.value as 'dark' | 'light') || 'light';
   return (
     <html lang="en" className={theme == 'dark' ? 'dark' : ''}>
-      <body className={`${libre.variable}`}>{children}</body>
+      <body className={`${libre.variable} ${kanit.variable}`}>{children}</body>
     </html>
   )
 }
