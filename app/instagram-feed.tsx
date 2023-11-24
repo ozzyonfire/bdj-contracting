@@ -1,6 +1,7 @@
 import { getClient, Client } from "@/model/client";
 import Image from "next/image";
 import { AspectRatio } from "../components/ui/aspect-ratio";
+import { refreshToken } from "./actions";
 
 interface Media {
   id: string;
@@ -28,6 +29,9 @@ const getMedia = async (access_token: string) => {
   const data = await response.json();
   return data as {
     data: Media[];
+    error?: {
+      message: string;
+    }
   }
 }
 
@@ -47,7 +51,16 @@ export async function InstagramFeed() {
     return <div>No client.</div>
   }
 
-  const mediaResponse = await getMedia(client.instagram_access_token);
+  console.log(client);
+  if (!client.instagram_access_token) {
+    return <div>No access token.</div>
+  }
+  let mediaResponse = await getMedia(client.instagram_access_token);
+  if (mediaResponse.error) {
+    const newToken = await refreshToken(client.name, client.instagram_access_token, client.instagram_user_id);
+    mediaResponse = await getMedia(newToken);
+  }
+  console.log(mediaResponse);
   const media = mediaResponse?.data?.filter(v => v.media_type !== 'VIDEO').slice(0, 8);
 
   return (

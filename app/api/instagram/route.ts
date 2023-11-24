@@ -5,7 +5,6 @@ const INSTAGRAM_APP_SECRET = process.env.INSTAGRAM_APP_SECRET || '';
 const clientName = 'bdj-contracting';
 const redirect_uri = 'https://f032-174-93-35-241.ngrok-free.app/api/instagram';
 
-
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const code = searchParams.get('code');

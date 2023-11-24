@@ -7,7 +7,7 @@ export const libre = Libre_Caslon_Text({
 });
 
 export const kanit = Kanit({
-  weight: '400',
+  weight: ['400', '700', '200', '300'],
   subsets: ['latin'],
   variable: '--font-sans'
 });

@@ -12,40 +12,12 @@ import { submitContactForm } from './actions';
 import Header from './header';
 import DoBest from './do-best';
 import ChooseUs from './choose-us';
+import BackgroundBox from '@/components/design/BackgroundBox';
+import OurServices from './our-services';
+import ContactUs from './contact-us';
 
 export default async function Home() {
   const theme = (cookies().get("theme")?.value as 'dark' | 'light') || 'light';
-
-  const services: string[] = [
-    'Renovations',
-    'Finishing',
-    'Design',
-    'Construction',
-    'Landscaping',
-    'Excavation',
-    'Demolition',
-    'Bathrooms',
-    'Kitchens',
-    'Basements',
-    'Decks',
-    'Fences',
-    'Additions',
-    'Flooring',
-    'Painting',
-    'Drywall',
-    'Trim',
-    'Cabinets',
-    'Countertops',
-    'Windows',
-    'Doors',
-    'Stairs',
-    'Railings',
-    'Siding',
-    'Fine Carpentry',
-    'Woodworking',
-    'Furniture',
-    'and more!'
-  ];
 
   const handleFormSubmit = async (formData: FormData) => {
     'use server';
@@ -73,7 +45,7 @@ export default async function Home() {
               <h2 className="font-serif text-5xl font-semibold drop-shadow-md">
                 Turning dreams into reality.
               </h2>
-              <p className='font-sans text-2xl max-w-screen-md'>
+              <p className='font-sans text-2xl max-w-screen-md font-light'>
                 Get a free quote today. We&apos;ll get back to you within 24 hours. We are committed to providing the highest quality workmanship and customer service. We are fully licensed and insured.
               </p>
             </div>
@@ -83,37 +55,20 @@ export default async function Home() {
             </div>
           </div>
 
-          <div className='w-full h-48 absolute'>
-            {/* svg from bottom-left to top right to transition background color */}
-            <svg
-              className='w-full h-full fill-gray-50 dark:fill-gray-950'
-              viewBox="0 0 100 100"
-              preserveAspectRatio="none"
-            >
-              {/* <polygon points="0,0 100,0 0,100" /> */}
-              <polygon points="0,100 100,100, 100,0" />
-            </svg>
-          </div>
+          <BackgroundBox
+            className='absolute'
+            fill='fill-white dark:fill-gray-950'
+            points="0,100 100,100, 100,0"
+          />
         </div>
-
-
 
         <DoBest theme={theme} />
 
-        <div className='w-full h-48 bg-gray-950'>
-          {/* svg from bottom-left to top right to transition background color */}
-          <svg
-            className='w-full h-full fill-gray-900'
-            viewBox="0 0 100 100"
-            preserveAspectRatio="none"
-          >
-            <polygon points="0,0 100,0 0,100" />
-          </svg>
-        </div>
-
         <ChooseUs />
 
-        <p className='font-serif text-4xl text-muted-foreground font-semibold text-center'>
+        <OurServices />
+
+        {/* <p className='font-serif text-4xl text-muted-foreground font-semibold text-center'>
           Bay of Quinte&apos;s most sought-after contractor.
         </p>
         <Section>
@@ -163,41 +118,18 @@ export default async function Home() {
               }
             />
           </div>
-        </Section>
+        </Section> */}
         <Section id="gallery">
           <SectionHeader title="Gallery" />
           <InstagramFeed />
         </Section>
-        <Section alt id="services">
-          <SectionHeader title="Services" />
-          <ul className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 mx-24 gap-3 list-disc'>
-            {services.map((service) => (
-              <li key={service} className='text-2xl font-semibold'>
-                {service}
-              </li>
-            ))}
-          </ul>
-        </Section>
-        <Section id="contact-us">
-          <SectionHeader title="Contact Us" />
-          <div className='flex flex-col items-center justify-center gap-4'>
-            <p className='font-serif text-2xl text-muted-foreground font-semibold text-center'>
-              Ready to get started?
-            </p>
-            <form className='min-w-[480px] px-4' action={handleFormSubmit}>
-              <div className='flex flex-col gap-1'>
-                <Input autoComplete='off' placeholder='First name' type="text" name="first-name" required />
-                <Input autoComplete='off' placeholder='Last name' type="text" name="last-name" required />
-                <Input autoComplete='off' placeholder="Email" type="email" required name="email" />
-                <Input placeholder="Phone" name="phone" />
-                <Textarea placeholder="Message" required name="message" />
-                <div className="flex justify-end">
-                  <Button variant="default" size="lg" type="submit">Send</Button>
-                </div>
-              </div>
-            </form>
-          </div>
-        </Section>
+
+        <BackgroundBox
+          fill='fill-gray-50 dark:fill-gray-900'
+          points="0,100 100,100, 100,0"
+        />
+
+        <ContactUs />
       </main>
     </>
   )
