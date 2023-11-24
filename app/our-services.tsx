@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function OurServices() {
 	return (
-		<section id="do-best" className="w-full flex flex-col items-center justify-center min-h-screen bg-gradient-to-b dark:from-gray-950 from-50% dark:to-gray-900 from-gray-50 to-gray-100 relative">
+		<section id="services" className="w-full flex flex-col items-center justify-center min-h-screen bg-gradient-to-b dark:from-gray-950 from-50% dark:to-gray-900 from-gray-50 to-gray-100 relative">
 			<BackgroundBox
 				className='absolute bottom-0 z-auto'
 				fill='fill-white dark:fill-gray-950'

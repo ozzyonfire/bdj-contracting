@@ -2,6 +2,7 @@ import ToggleTheme from "@/components/client/ToggleTheme";
 import MobileNav from "@/components/client/mobile-nav";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 
 
 export default function Header({ theme }: {
@@ -24,21 +25,21 @@ export default function Header({ theme }: {
 						<MobileNav />
 					</div>
 					<div className='hidden lg:flex justify-center items-center gap-4 h-12'>
-						<a href="#do-best">
+						<Link href="#do-best">
 							<span className='font-serif text-lg font-semibold hover:border-b-4'>
 								What we do
+							</span>
+						</Link>
+						<span>&middot;</span>
+						<a href="#services">
+							<span className='font-serif text-lg font-semibold hover:border-b-4'>
+								Services
 							</span>
 						</a>
 						<span>&middot;</span>
 						<a href="#gallery">
 							<span className='font-serif text-lg font-semibold hover:border-b-4'>
 								Gallery
-							</span>
-						</a>
-						<span>&middot;</span>
-						<a href="#services">
-							<span className='font-serif text-lg font-semibold hover:border-b-4'>
-								Services
 							</span>
 						</a>
 						<span>&middot;</span>

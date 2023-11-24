@@ -39,7 +39,7 @@ export default async function Home() {
             priority
           />
           <div className="hidden lg:block absolute inset-0 bg-gradient-to-b from-secondary via-transparent via-50% to-primary-foreground opacity-75"></div>
-          <div className='lg:hidden absolute inset-0 bg-gray-950 opacity-50'></div>
+          <div className='lg:hidden absolute inset-0 dark:bg-gray-950 bg-white opacity-50'></div>
 
           <div className='container relative z-10 flex gap-4 pb-16 items-end'>
             <div className="flex flex-col gap-4">
