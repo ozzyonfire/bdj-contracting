@@ -22,7 +22,7 @@ export default function Header({ theme }: {
 					</div>
 					<div className='flex-grow'></div>
 					<div className="block lg:hidden">
-						<MobileNav />
+						<MobileNav theme={theme} />
 					</div>
 					<div className='hidden lg:flex justify-center items-center gap-4 h-12'>
 						<Link href="#do-best">
