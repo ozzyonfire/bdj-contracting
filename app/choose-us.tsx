@@ -12,11 +12,11 @@ export default function ChooseUs() {
 				fill='fill-gray-50 dark:fill-gray-950'
 				points="0,0 0,100, 100,100"
 			/>
-			<div className="container my-24 flex flex-col gap-4 h-full flex-grow">
+			<div className="container my-12 lg:my-24 flex flex-col gap-4 h-full flex-grow">
 				<div className="flex flex-wrap w-full gap-8 lg:gap-0">
 					<div className="w-full lg:w-1/3">
 						<div className="flex flex-col gap-12">
-							<h2 className="text-5xl font-serif font-bold">
+							<h2 className="text-5xl font-serif font-bold text-center lg:text-left">
 								Why choose us?
 							</h2>
 							<div className="">
